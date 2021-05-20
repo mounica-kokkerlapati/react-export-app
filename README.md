@@ -10,9 +10,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 # JSON data file path
 ./src/resports.json
 
-# Install above packages
-npm install pptxgenjs
-npm install xlsx
+# Install Additional packages
+1. npm install pptxgenjs 
+2. npm install xlsx
 
 # Run App
 npm start
