@@ -3,6 +3,9 @@ import './App.css';
 import XLSX from "xlsx";
 import pptxgen from "pptxgenjs";
 import jsonData from './reports.json';
+import { jsPDF } from "jspdf";
+import 'jspdf-autotable'
+import html2canvas from 'html2canvas';
 
 const csvdata = jsonData.analyzeAnswerStat.stats;
 const csat_answers = ["Very Dissatisfied","Dissatisfied","Neutral","Very satisfied","Excellent"]
@@ -172,11 +175,77 @@ function App() {
   
   };
 
+  const exportPDF = () => {
+    var doc = new jsPDF('p', 'pt' , 'a3');
+    var childId = document.getElementById('content1');
+    html2canvas(childId).then((canvas) => {
+      
+      for (let i = 0; i < csvdata.length; i++) {
+        let d = csvdata[i].data;
+        d  = editdata(csvdata[i],d)
+        let r1 = Object.keys(d[0])
+        r1 = r1.map(name => name.toUpperCase());
+        let arr = []
+        d.forEach(function(item) {
+          arr.push(Object.values(item))
+        });
+        doc.text(jsonData.analyzeAnswerStat.stats[i].question, 30, 40);
+        doc.autoTable({
+          margin: { top: 50 , left:270},
+          tableWidth: 'wrap',
+          head: [r1],
+          body: arr,
+        })
+        //let canvasDataURL = canvas.toDataURL("image/jpeg", 1.0);
+        //doc.addImage(canvasDataURL, 'JPEG',15, 40, 180, 180)
+        //doc.addImage(canvasDataURL, 'JPEG', 10, 50);
+        doc.addPage()
+      }
+      doc.save("a4.pdf");
+    });
+  }
+
+  const exportPDFv2 = async () => {
+    var doc = new jsPDF('p', 'pt' , 'a3');
+    let childern = document.getElementById('print').childNodes;
+    let childIds = []
+
+    childern.forEach(item => {
+      if(item.id) childIds.push(item.id)
+    });
+
+    var i = 0;
+    function nextStep(){
+      if(i >= childIds.length) {
+        doc.save("Reports.pdf");
+        return;
+      } 
+      var childId = document.getElementById(childIds[i]);
+      html2canvas(childId).then((canvas) => {
+        let canvasDataURL = canvas.toDataURL("image/jpeg", 1.0);
+        let width = canvas.width;
+        let height = canvas.height;
+
+        doc.addImage(canvasDataURL, 'JPEG', 10, 10, (width*.50), (height*.50) )
+        //doc.addImage(canvasDataURL, 'JPEG', 10, 50);
+
+        if( i < childIds.length){
+          doc.addPage();
+        }
+        //doc.setPage(i+1);
+        nextStep();
+      })
+      i++;
+    }
+    nextStep();
+  }
+  
   return (
     <div className="App">
       <header className="App-header">
         <button onClick={exportEXCEL}>Export XLSX</button>
         <button onClick={exportPPT}>Export PPT</button>
+        <button onClick={exportPDFv2}>Export PDF</button>
       </header>
     </div>
   );
