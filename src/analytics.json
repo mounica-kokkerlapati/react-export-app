@@ -1,0 +1,159 @@
+[{
+    "statusSummary":{
+        "totalCompleted":9338,
+        "totalPartial":9361,
+        "totalViewed":12380,
+        "totalNotViewed":0
+    },
+    "npsStats":null,
+    "responseOverTimeStats":{
+        "period":"Jul-2021",
+        "sourcesEn":[
+            {
+                "name":"Digital Banking Survey",
+                "value":10
+            },
+            {
+                "name":"E-Finance Survey",
+                "value":8
+            },
+            {
+                "name":"Online Account Opening",
+                "value":7
+            },
+            {
+                "name":"Relationship Top Down Survey",
+                "value":3
+            },
+            {
+                "name":"SME Banking Top Down Survey",
+                "value":2
+            },
+            {
+                "name":"TEST SURVEY FOR LOCAL",
+                "value":11
+            },
+            {
+                "name":"VOC Auto Finance",
+                "value":13
+            },
+            {
+                "name":"VOC Credit Card v3",
+                "value":12
+            },
+            {
+                "name":"VOC Personal Finance",
+                "value":14
+            }
+        ],
+        "sourcesAr":[
+            {
+                "name":"مسح الخدمات المصرفية الرقمية من أعلى إلى أسفل",
+                "value":10
+            },
+            {
+                "name":"E-Finance Survey",
+                "value":8
+            },
+            {
+                "name":"فتح الحساب عبر الإنترنت",
+                "value":7
+            },
+            {
+                "name":"مسح العلاقة من أعلى إلى أسفل",
+                "value":3
+            },
+            {
+                "name":"مسح الخدمات المصرفية للشركات الصغيرة والمتوسطة",
+                "value":2
+            },
+            {
+                "name":"TEST SURVEY FOR LOCAL",
+                "value":11
+            },
+            {
+                "name":"مسح تمويل السيارات من أعلى إلى أسفل",
+                "value":13
+            },
+            {
+                "name":" بطاقة الائتمان من أعلى إلى أسفل",
+                "value":12
+            },
+            {
+                "name":"مسح التمويل الشخصي من أعلى إلى أسفل",
+                "value":14
+            }
+        ],
+        "chartData":[
+            {
+                "10":8,
+                "interval":"03 Jul"
+            },
+            {
+                "10":2,
+                "interval":"04 Jul",
+                "11":2
+            },
+            {
+                "interval":"05 Jul",
+                "11":1
+            },
+            {
+                "2":3,
+                "10":3,
+                "interval":"06 Jul"
+            },
+            {
+                "2":6203,
+                "interval":"07 Jul"
+            },
+            {
+                "2":221,
+                "10":4,
+                "interval":"08 Jul",
+                "12":1
+            },
+            {
+                "interval":"09 Jul",
+                "12":1
+            },
+            {
+                "2":1,
+                "interval":"10 Jul"
+            },
+            {
+                "3":3,
+                "10":1,
+                "interval":"11 Jul",
+                "11":2,
+                "13":2,
+                "14":2
+            },
+            {
+                "7":5,
+                "8":5,
+                "10":1,
+                "interval":"12 Jul",
+                "14":1
+            },
+            {
+                "7":9396,
+                "8":1662,
+                "interval":"13 Jul"
+            },
+            {
+                "7":959,
+                "8":128,
+                "10":1,
+                "interval":"14 Jul",
+                "13":1
+            },
+            {
+                "7":67,
+                "8":12,
+                "10":1,
+                "interval":"15 Jul"
+            }
+        ]
+    }
+}]
